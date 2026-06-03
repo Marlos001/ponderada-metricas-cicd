@@ -2,6 +2,25 @@
 
 Este repositorio contem um experimento pratico para medir um pipeline CI/CD no GitHub Actions. O projeto usa uma pequena biblioteca Python, testes automatizados e scripts proprios para coletar metricas reais de execucoes do workflow.
 
+## Entregaveis
+
+Os entregaveis principais estao organizados no indice [`entregaveis/README.md`](entregaveis/README.md). Links diretos:
+
+- Relatorio tecnico final: [`REPORT.md`](REPORT.md)
+- Workflow GitHub Actions: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+- Script de coleta de metricas: [`scripts/collect_metrics.py`](scripts/collect_metrics.py)
+- Script de geracao de graficos: [`scripts/generate_charts.py`](scripts/generate_charts.py)
+- Base principal em CSV: [`data/pipeline_metrics.csv`](data/pipeline_metrics.csv)
+- Base de etapas em CSV: [`data/step_metrics.csv`](data/step_metrics.csv)
+- Manifesto de execucoes reais: [`data/run_manifest.csv`](data/run_manifest.csv)
+- Base bruta/normalizada em JSON: [`data/raw_runs.json`](data/raw_runs.json)
+- Graficos produzidos: [`charts/`](charts/)
+- Matriz de variacoes executadas: [`experiments/run_matrix.csv`](experiments/run_matrix.csv)
+
+## Resultado do experimento
+
+Foram coletadas 12 execucoes reais do GitHub Actions, incluindo execucoes com cache habilitado/desabilitado, jobs sequenciais/paralelos, suites `fast`, `expanded`, `slow` e uma falha controlada. Os IDs reais dos workflows, commits e links para as execucoes estao documentados em [`REPORT.md`](REPORT.md).
+
 ## Estrutura
 
 - `.github/workflows/ci.yml`: workflow parametrizado do experimento.
@@ -9,7 +28,10 @@ Este repositorio contem um experimento pratico para medir um pipeline CI/CD no G
 - `tests/`: suites `fast`, `expanded`, `slow` e falha controlada.
 - `scripts/collect_metrics.py`: coleta metricas pela API do GitHub e artefatos JUnit.
 - `scripts/generate_charts.py`: gera os graficos obrigatorios.
-- `experiments/run_matrix.csv`: matriz recomendada de 14 execucoes reais.
+- `experiments/run_matrix.csv`: matriz de variacoes do experimento.
+- `data/`: bases coletadas em CSV e JSON.
+- `charts/`: graficos gerados a partir dos dados coletados.
+- `entregaveis/`: indice dos arquivos que compoem a entrega.
 - `REPORT.md`: relatorio tecnico em PT-BR.
 
 ## Reproducao local
@@ -40,7 +62,7 @@ O workflow aceita quatro parametros:
 - `test_profile`: `fast`, `expanded`, `slow` ou `failing`
 - `pytest_workers`: `1` ou `auto`
 
-A matriz recomendada esta em `experiments/run_matrix.csv`. Execute pelo menos 12 runs reais; este projeto recomenda 14 para incluir falhas controladas.
+A matriz do experimento esta em `experiments/run_matrix.csv`. Este repositorio ja contem 12 runs reais coletados em `data/run_manifest.csv`.
 
 Comandos prontos para disparar a matriz estao em `experiments/run_commands.md`.
 
@@ -75,4 +97,4 @@ Graficos gerados:
 
 ## Relatorio
 
-O arquivo `REPORT.md` e o entregavel principal. Depois das execucoes reais, preencha os links/IDs dos runs, commits usados, resultados inesperados e conclusoes com base nos dados coletados.
+O arquivo [`REPORT.md`](REPORT.md) e o entregavel principal. Ele contem os links/IDs dos runs reais, commits usados, variacoes executadas, resultados inesperados e conclusoes com base nos dados coletados.
