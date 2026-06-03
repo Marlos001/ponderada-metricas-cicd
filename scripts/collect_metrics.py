@@ -8,13 +8,12 @@ import os
 import tempfile
 import zipfile
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 import requests
 from junitparser import JUnitXml
-
 
 API_ROOT = "https://api.github.com"
 
@@ -29,9 +28,10 @@ class TestMetrics:
 
     @property
     def average_test_seconds(self) -> float | None:
-        if self.test_count in {None, 0} or self.test_time_seconds is None:
+        test_count = self.test_count
+        if test_count is None or test_count == 0 or self.test_time_seconds is None:
             return None
-        return self.test_time_seconds / self.test_count
+        return self.test_time_seconds / test_count
 
 
 def main() -> int:
@@ -43,6 +43,7 @@ def main() -> int:
     parser.add_argument("--output", default="data/pipeline_metrics.csv")
     parser.add_argument("--raw-output", default="data/raw_runs.json")
     parser.add_argument("--manifest-output", default="data/run_manifest.csv")
+    parser.add_argument("--steps-output", default="data/step_metrics.csv")
     parser.add_argument("--artifacts-dir", default=None)
     args = parser.parse_args()
 
@@ -63,6 +64,7 @@ def main() -> int:
     runs = fetch_workflow_runs(session, repo_full_name, args.workflow, args.limit)
     normalized_runs: list[dict[str, Any]] = []
     rows: list[dict[str, Any]] = []
+    step_rows: list[dict[str, Any]] = []
     manifest_rows: list[dict[str, Any]] = []
 
     for run in runs:
@@ -121,11 +123,42 @@ def main() -> int:
                     **variant,
                 }
             )
+            for step in job.get("steps", []):
+                step_started = step.get("started_at")
+                step_completed = step.get("completed_at")
+                step_duration = None
+                if step_started and step_completed:
+                    step_duration = round(
+                        duration_seconds(
+                            parse_github_datetime(step_started),
+                            parse_github_datetime(step_completed),
+                        ),
+                        3,
+                    )
+                step_rows.append(
+                    {
+                        "run_id": run["id"],
+                        "run_number": run["run_number"],
+                        "commit_sha": run["head_sha"],
+                        "status": conclusion,
+                        "job_name": job["name"],
+                        "step_name": step.get("name"),
+                        "step_status": step.get("conclusion") or step.get("status"),
+                        "step_number": step.get("number"),
+                        "step_duration": step_duration,
+                        "timestamp": run_started.isoformat(),
+                        **variant,
+                    }
+                )
 
     write_csv(Path(args.output), rows)
+    write_csv(Path(args.steps_output), step_rows)
     write_csv(Path(args.manifest_output), manifest_rows)
     write_json(Path(args.raw_output), normalized_runs)
-    print(f"Wrote {args.output}, {args.manifest_output}, and {args.raw_output}")
+    print(
+        f"Wrote {args.output}, {args.steps_output}, "
+        f"{args.manifest_output}, and {args.raw_output}"
+    )
     return 0
 
 
@@ -133,7 +166,11 @@ def fetch_workflow_runs(
     session: requests.Session, repo_full_name: str, workflow: str, limit: int
 ) -> list[dict[str, Any]]:
     url = f"{API_ROOT}/repos/{repo_full_name}/actions/workflows/{workflow}/runs"
-    response = session.get(url, params={"per_page": min(limit, 100), "exclude_pull_requests": "true"})
+    params: dict[str, str | int] = {
+        "per_page": min(limit, 100),
+        "exclude_pull_requests": "true",
+    }
+    response = session.get(url, params=params)
     response.raise_for_status()
     return list(response.json()["workflow_runs"])
 
@@ -142,7 +179,8 @@ def fetch_run_jobs(
     session: requests.Session, repo_full_name: str, run_id: int
 ) -> list[dict[str, Any]]:
     url = f"{API_ROOT}/repos/{repo_full_name}/actions/runs/{run_id}/jobs"
-    response = session.get(url, params={"per_page": 100, "filter": "latest"})
+    params: dict[str, str | int] = {"per_page": 100, "filter": "latest"}
+    response = session.get(url, params=params)
     response.raise_for_status()
     return list(response.json()["jobs"])
 
@@ -212,7 +250,7 @@ def parse_junit_xml_bytes(content: bytes) -> TestMetrics:
 
 
 def parse_junit_xml_path(path: Path) -> TestMetrics:
-    xml = JUnitXml.fromfile(path)
+    xml = JUnitXml.fromfile(str(path))
     return junit_to_metrics(xml)
 
 
@@ -227,8 +265,9 @@ def junit_to_metrics(xml: JUnitXml) -> TestMetrics:
 
 def infer_variant(run: dict[str, Any], commit_summary: str) -> dict[str, str]:
     name = run.get("name") or ""
+    display_title = run.get("display_title") or ""
     event = run.get("event") or ""
-    lower_text = f"{name} {commit_summary}".lower()
+    lower_text = f"{name} {display_title} {commit_summary}".lower()
     return {
         "event": event,
         "cache_mode": infer_token(
@@ -253,7 +292,7 @@ def infer_token(text: str, tokens: list[str], default: str) -> str:
 
 
 def parse_github_datetime(value: str) -> datetime:
-    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(UTC)
 
 
 def duration_seconds(started_at: datetime, completed_at: datetime) -> float:

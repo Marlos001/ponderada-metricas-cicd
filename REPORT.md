@@ -59,6 +59,7 @@ O script `scripts/collect_metrics.py` consulta a API do GitHub Actions e baixa o
 - status da execucao;
 - duracao total do workflow;
 - nome e duracao de cada job;
+- nome e duracao de etapas relevantes;
 - quantidade de testes;
 - quantidade de falhas;
 - tempo total e medio dos testes;

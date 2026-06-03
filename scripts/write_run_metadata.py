@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 
@@ -24,7 +24,7 @@ def main() -> int:
         "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"),
         "github_sha": os.getenv("GITHUB_SHA"),
         "github_ref_name": os.getenv("GITHUB_REF_NAME"),
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
     }
     output.write_text(json.dumps(metadata, indent=2, sort_keys=True), encoding="utf-8")
     print(f"Wrote {output}")

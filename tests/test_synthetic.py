@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from time import sleep
+
 import pytest
 
 from ci_metrics.synthetic import (
@@ -60,6 +62,7 @@ def test_summarize_numeric_cases_expanded(case_size: int) -> None:
 @pytest.mark.slow
 @pytest.mark.parametrize("case_size", [5000, 7500, 10000])
 def test_summarize_numeric_cases_slow(case_size: int) -> None:
+    sleep(0.75)
     summary = summarize_numeric_cases(range(case_size))
 
     assert summary.average_case_seconds >= 0

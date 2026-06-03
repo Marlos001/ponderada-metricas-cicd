@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
@@ -15,15 +15,15 @@ from ci_metrics.analysis import (
 
 
 def test_duration_seconds_accepts_timezone_aware_datetimes() -> None:
-    start = datetime(2026, 6, 3, 10, 0, tzinfo=timezone.utc)
-    end = datetime(2026, 6, 3, 10, 2, 30, tzinfo=timezone.utc)
+    start = datetime(2026, 6, 3, 10, 0, tzinfo=UTC)
+    end = datetime(2026, 6, 3, 10, 2, 30, tzinfo=UTC)
 
     assert duration_seconds(start, end) == 150
 
 
 def test_duration_seconds_rejects_negative_interval() -> None:
-    start = datetime(2026, 6, 3, 10, 2, tzinfo=timezone.utc)
-    end = datetime(2026, 6, 3, 10, 0, tzinfo=timezone.utc)
+    start = datetime(2026, 6, 3, 10, 2, tzinfo=UTC)
+    end = datetime(2026, 6, 3, 10, 0, tzinfo=UTC)
 
     with pytest.raises(ValueError, match="completed_at"):
         duration_seconds(start, end)
@@ -49,8 +49,8 @@ def test_success_and_failure_rates() -> None:
 
 
 def test_run_measurement_reports_failed_jobs() -> None:
-    start = datetime(2026, 6, 3, 10, 0, tzinfo=timezone.utc)
-    end = datetime(2026, 6, 3, 10, 1, tzinfo=timezone.utc)
+    start = datetime(2026, 6, 3, 10, 0, tzinfo=UTC)
+    end = datetime(2026, 6, 3, 10, 1, tzinfo=UTC)
     jobs = (
         JobMeasurement("lint", start, end, "success"),
         JobMeasurement("tests", start, end, "failure"),

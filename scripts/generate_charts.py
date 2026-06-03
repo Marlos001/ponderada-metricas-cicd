@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from typing import Any, cast
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -44,7 +45,7 @@ def plot_workflow_duration(runs: pd.DataFrame, output: Path) -> None:
 
 
 def plot_job_duration(data: pd.DataFrame, output: Path) -> None:
-    grouped = data.groupby("job_name", as_index=False)["job_duration"].mean()
+    grouped = cast(Any, data.groupby("job_name", as_index=False)["job_duration"].mean())
     grouped = grouped.sort_values("job_duration", ascending=False)
     plt.figure(figsize=(10, 6))
     plt.bar(grouped["job_name"], grouped["job_duration"])
@@ -60,7 +61,12 @@ def plot_job_duration(data: pd.DataFrame, output: Path) -> None:
 def plot_status_rate(runs: pd.DataFrame, output: Path) -> None:
     counts = runs["status"].fillna("unknown").value_counts()
     plt.figure(figsize=(8, 6))
-    plt.pie(counts.values, labels=counts.index, autopct="%1.1f%%", startangle=90)
+    plt.pie(
+        counts.to_numpy(),
+        labels=[str(label) for label in counts.index.tolist()],
+        autopct="%1.1f%%",
+        startangle=90,
+    )
     plt.title("Taxa de sucesso e falha")
     plt.tight_layout()
     plt.savefig(output, dpi=160)

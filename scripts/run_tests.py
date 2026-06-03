@@ -5,7 +5,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 PROFILE_MARKERS = {
     "fast": "not slow and not expanded and not experimental_failure",
     "expanded": "not slow and not experimental_failure",

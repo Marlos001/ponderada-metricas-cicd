@@ -54,6 +54,7 @@ make collect
 Arquivos gerados:
 
 - `data/pipeline_metrics.csv`
+- `data/step_metrics.csv`
 - `data/run_manifest.csv`
 - `data/raw_runs.json`
 
