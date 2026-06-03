@@ -85,8 +85,10 @@ def main() -> int:
         jobs = fetch_run_jobs(session, repo_full_name, run["id"])
         test_metrics = load_test_metrics(session, repo_full_name, run["id"], args.artifacts_dir)
         run_started = parse_github_datetime(run["run_started_at"] or run["created_at"])
-        run_completed = parse_github_datetime(run["updated_at"])
-        workflow_duration = duration_seconds(run_started, run_completed)
+        run_completed = parse_optional_github_datetime(run.get("updated_at"))
+        workflow_duration = (
+            duration_seconds(run_started, run_completed) if run_completed is not None else None
+        )
         commit_message = (run.get("head_commit") or {}).get("message") or ""
         commit_summary = commit_message.splitlines()[0] if commit_message else ""
         conclusion = run.get("conclusion") or run.get("status")
@@ -108,14 +110,17 @@ def main() -> int:
                 "commit_message": commit_summary,
                 "status": conclusion,
                 "timestamp": run_started.isoformat(),
-                "workflow_duration": round(workflow_duration, 3),
+                "workflow_duration": round_optional(workflow_duration),
                 **variant,
             }
         )
 
         for job in jobs:
-            job_started = parse_github_datetime(job["started_at"])
-            job_completed = parse_github_datetime(job["completed_at"])
+            job_started = parse_optional_github_datetime(job.get("started_at"))
+            job_completed = parse_optional_github_datetime(job.get("completed_at"))
+            job_duration = None
+            if job_started is not None and job_completed is not None:
+                job_duration = duration_seconds(job_started, job_completed)
             rows.append(
                 {
                     "run_id": run["id"],
@@ -123,10 +128,10 @@ def main() -> int:
                     "commit_sha": run["head_sha"],
                     "commit_message": commit_summary,
                     "status": conclusion,
-                    "workflow_duration": round(workflow_duration, 3),
+                    "workflow_duration": round_optional(workflow_duration),
                     "job_name": job["name"],
                     "job_status": job.get("conclusion") or job.get("status"),
-                    "job_duration": round(duration_seconds(job_started, job_completed), 3),
+                    "job_duration": round_optional(job_duration),
                     "test_count": test_metrics.test_count,
                     "test_failures": test_metrics.test_failures,
                     "test_errors": test_metrics.test_errors,
@@ -354,8 +359,20 @@ def parse_github_datetime(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(UTC)
 
 
+def parse_optional_github_datetime(value: str | None) -> datetime | None:
+    if value is None:
+        return None
+    return parse_github_datetime(value)
+
+
 def duration_seconds(started_at: datetime, completed_at: datetime) -> float:
     return max((completed_at - started_at).total_seconds(), 0.0)
+
+
+def round_optional(value: float | None) -> float | None:
+    if value is None:
+        return None
+    return round(value, 3)
 
 
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
