@@ -1,0 +1,199 @@
+name: CI Metrics Experiment
+run-name: >-
+  ${{ github.event.inputs.cache_mode || 'cache-on' }}-${{ github.event.inputs.execution_mode || 'parallel' }}-${{ github.event.inputs.test_profile || 'fast' }}-workers-${{ github.event.inputs.pytest_workers || '1' }}
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      cache_mode:
+        description: "Dependency cache mode"
+        required: true
+        default: "enabled"
+        type: choice
+        options:
+          - enabled
+          - disabled
+      execution_mode:
+        description: "Run quality gates sequentially or as parallel jobs"
+        required: true
+        default: "parallel"
+        type: choice
+        options:
+          - sequential
+          - parallel
+      test_profile:
+        description: "Pytest profile"
+        required: true
+        default: "fast"
+        type: choice
+        options:
+          - fast
+          - expanded
+          - slow
+          - failing
+      pytest_workers:
+        description: "pytest-xdist workers. Use 1 to disable xdist."
+        required: true
+        default: "1"
+        type: choice
+        options:
+          - "1"
+          - auto
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  PYTHON_VERSION: "3.11"
+  CACHE_MODE: ${{ github.event.inputs.cache_mode || 'enabled' }}
+  EXECUTION_MODE: ${{ github.event.inputs.execution_mode || 'parallel' }}
+  TEST_PROFILE: ${{ github.event.inputs.test_profile || 'fast' }}
+  PYTEST_WORKERS: ${{ github.event.inputs.pytest_workers || '1' }}
+
+jobs:
+  sequential:
+    name: sequential-quality-gates
+    if: ${{ github.event.inputs.execution_mode == 'sequential' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python without dependency cache
+        if: ${{ env.CACHE_MODE == 'disabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Setup Python with pip cache
+        if: ${{ env.CACHE_MODE == 'enabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Write run metadata
+        run: python scripts/write_run_metadata.py --output artifacts/run-metadata.json
+
+      - name: Lint
+        run: python -m ruff check .
+
+      - name: Typecheck
+        run: python -m mypy src scripts
+
+      - name: Tests
+        run: python scripts/run_tests.py
+
+      - name: Upload sequential artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ github.run_id }}-sequential
+          path: |
+            artifacts/*.xml
+            artifacts/*.json
+            coverage.xml
+
+  lint:
+    name: lint
+    if: ${{ github.event.inputs.execution_mode != 'sequential' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python without dependency cache
+        if: ${{ env.CACHE_MODE == 'disabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Setup Python with pip cache
+        if: ${{ env.CACHE_MODE == 'enabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Lint
+        run: python -m ruff check .
+
+  typecheck:
+    name: typecheck
+    if: ${{ github.event.inputs.execution_mode != 'sequential' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python without dependency cache
+        if: ${{ env.CACHE_MODE == 'disabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Setup Python with pip cache
+        if: ${{ env.CACHE_MODE == 'enabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Typecheck
+        run: python -m mypy src scripts
+
+  tests:
+    name: tests
+    if: ${{ github.event.inputs.execution_mode != 'sequential' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python without dependency cache
+        if: ${{ env.CACHE_MODE == 'disabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Setup Python with pip cache
+        if: ${{ env.CACHE_MODE == 'enabled' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Write run metadata
+        run: python scripts/write_run_metadata.py --output artifacts/run-metadata.json
+
+      - name: Tests
+        run: python scripts/run_tests.py
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ github.run_id }}-parallel
+          path: |
+            artifacts/*.xml
+            artifacts/*.json
+            coverage.xml

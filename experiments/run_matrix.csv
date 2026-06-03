@@ -1,0 +1,15 @@
+run_label,cache_mode,execution_mode,test_profile,pytest_workers,expected_status,purpose
+baseline-seq-fast-1,disabled,sequential,fast,1,success,Baseline sem cache em execucao sequencial
+baseline-seq-fast-2,disabled,sequential,fast,1,success,Repeticao do baseline para reduzir ruido
+cache-seq-fast-1,enabled,sequential,fast,1,success,Medir impacto de cache no perfil rapido
+cache-seq-fast-2,enabled,sequential,fast,1,success,Repeticao com cache aquecido
+parallel-fast-1,enabled,parallel,fast,1,success,Medir overhead de jobs paralelos no perfil rapido
+parallel-fast-2,enabled,parallel,fast,1,success,Repeticao do paralelismo no perfil rapido
+expanded-seq-cache-off,disabled,sequential,expanded,1,success,Aumentar quantidade de testes sem cache
+expanded-seq-cache-on,enabled,sequential,expanded,1,success,Aumentar quantidade de testes com cache
+expanded-parallel-cache-on,enabled,parallel,expanded,1,success,Comparar jobs paralelos com suite expandida
+expanded-xdist-cache-on,enabled,parallel,expanded,auto,success,Observar impacto adicional de pytest-xdist
+slow-seq-cache-on,enabled,sequential,slow,1,success,Introduzir teste lento em execucao sequencial
+slow-parallel-cache-on,enabled,parallel,slow,auto,success,Comparar teste lento com jobs paralelos e xdist
+controlled-test-failure,enabled,parallel,failing,1,failure,Falha controlada em teste automatizado
+controlled-lint-failure,enabled,parallel,fast,1,failure,Falha controlada de qualidade estatica por commit temporario
