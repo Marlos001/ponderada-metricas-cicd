@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 from typing import Any, cast
+
+os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib-cache")
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -45,7 +48,8 @@ def plot_workflow_duration(runs: pd.DataFrame, output: Path) -> None:
 
 
 def plot_job_duration(data: pd.DataFrame, output: Path) -> None:
-    grouped = cast(Any, data.groupby("job_name", as_index=False)["job_duration"].mean())
+    completed_jobs = data[data["job_status"] != "skipped"].dropna(subset=["job_duration"])
+    grouped = cast(Any, completed_jobs.groupby("job_name", as_index=False)["job_duration"].mean())
     grouped = grouped.sort_values("job_duration", ascending=False)
     plt.figure(figsize=(10, 6))
     plt.bar(grouped["job_name"], grouped["job_duration"])

@@ -1,0 +1,13 @@
+run_id,run_number,commit_sha,commit_message,status,timestamp,workflow_duration,event,cache_mode,execution_mode,test_profile
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,failure,2026-06-03T14:13:22+00:00,43.0,workflow_dispatch,enabled,parallel,failing
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:13:07+00:00,44.0,workflow_dispatch,enabled,parallel,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:12:44+00:00,43.0,workflow_dispatch,enabled,sequential,slow
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:12:15+00:00,41.0,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:11:54+00:00,41.0,workflow_dispatch,enabled,parallel,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:11:16+00:00,38.0,workflow_dispatch,enabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:10:53+00:00,41.0,workflow_dispatch,disabled,sequential,expanded
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:10:28+00:00,41.0,workflow_dispatch,disabled,sequential,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,fix: handle in-progress workflow jobs,success,2026-06-03T14:05:04+00:00,39.0,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,fix: use project venv for metrics collection,success,2026-06-03T14:04:03+00:00,39.0,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,docs: add experiment run commands,success,2026-06-03T13:53:06+00:00,36.0,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,fix: validate metrics scripts and slow profile,success,2026-06-03T13:52:00+00:00,36.0,push,enabled,parallel,fast

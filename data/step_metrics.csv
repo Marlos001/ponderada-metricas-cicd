@@ -1,0 +1,285 @@
+run_id,run_number,commit_sha,status,job_name,step_name,step_status,step_number,step_duration,timestamp,event,cache_mode,execution_mode,test_profile
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Set up job,success,1,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Setup Python with pip cache,success,4,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Install dependencies,success,5,18.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Lint,success,6,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Post Setup Python with pip cache,success,11,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,lint,Complete job,success,13,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Set up job,success,1,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Run actions/checkout@v4,success,2,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Setup Python with pip cache,success,4,4.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Install dependencies,success,5,19.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Typecheck,success,6,6.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,typecheck,Complete job,success,13,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Set up job,success,1,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Setup Python with pip cache,success,4,2.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Install dependencies,success,5,17.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Write run metadata,success,6,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Tests,failure,7,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Upload test artifacts,success,8,1.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Post Setup Python with pip cache,skipped,15,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890557964,12,ddec5fc4c59be9776cd72f3946984d27c9bf5235,failure,tests,Complete job,success,17,0.0,2026-06-03T14:13:22+00:00,workflow_dispatch,enabled,parallel,failing
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Set up job,success,1,1.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python with pip cache,success,4,4.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Install dependencies,success,5,17.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Write run metadata,success,6,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Tests,success,7,3.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Upload test artifacts,success,8,2.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Complete job,success,17,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Set up job,success,1,1.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python with pip cache,success,4,2.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Install dependencies,success,5,18.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Lint,success,6,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Complete job,success,13,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Set up job,success,1,2.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Run actions/checkout@v4,success,2,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python with pip cache,success,4,4.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Install dependencies,success,5,20.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Typecheck,success,6,6.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890543332,11,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Complete job,success,13,0.0,2026-06-03T14:13:07+00:00,workflow_dispatch,enabled,parallel,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Set up job,success,1,1.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python with pip cache,success,4,2.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Install dependencies,success,5,18.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Write run metadata,success,6,0.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Lint,success,7,0.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Typecheck,success,8,6.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Tests,success,9,3.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Upload sequential artifacts,success,10,1.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Setup Python with pip cache,success,19,1.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Run actions/checkout@v4,success,20,0.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890519546,10,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Complete job,success,21,0.0,2026-06-03T14:12:44+00:00,workflow_dispatch,enabled,sequential,slow
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Set up job,success,1,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python with pip cache,success,4,3.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Install dependencies,success,5,18.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Typecheck,success,6,6.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Setup Python with pip cache,success,11,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Complete job,success,13,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Set up job,success,1,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python with pip cache,success,4,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Install dependencies,success,5,18.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Write run metadata,success,6,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Tests,success,7,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Upload test artifacts,success,8,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Complete job,success,17,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Set up job,success,1,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python with pip cache,success,4,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Install dependencies,success,5,17.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Lint,success,6,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Run actions/checkout@v4,success,12,1.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890492458,9,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Complete job,success,13,0.0,2026-06-03T14:12:15+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Set up job,success,1,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python with pip cache,success,4,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Install dependencies,success,5,20.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Typecheck,success,6,6.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Run actions/checkout@v4,success,12,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Complete job,success,13,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Set up job,success,1,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python with pip cache,success,4,2.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Install dependencies,success,5,16.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Lint,success,6,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Complete job,success,13,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Set up job,success,1,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python with pip cache,success,4,3.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Install dependencies,success,5,18.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Write run metadata,success,6,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Tests,success,7,1.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Upload test artifacts,success,8,2.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890471731,8,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Complete job,success,17,0.0,2026-06-03T14:11:54+00:00,workflow_dispatch,enabled,parallel,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Set up job,success,1,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python with pip cache,success,4,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Install dependencies,success,5,17.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Write run metadata,success,6,0.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Lint,success,7,0.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Typecheck,success,8,6.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Tests,success,9,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Upload sequential artifacts,success,10,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Setup Python with pip cache,success,19,0.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Run actions/checkout@v4,success,20,0.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890434399,7,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Complete job,success,21,1.0,2026-06-03T14:11:16+00:00,workflow_dispatch,enabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Set up job,success,1,1.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Run actions/checkout@v4,success,2,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python without dependency cache,success,3,1.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python with pip cache,skipped,4,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Install dependencies,success,5,19.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Write run metadata,success,6,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Lint,success,7,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Typecheck,success,8,6.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Tests,success,9,1.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Upload sequential artifacts,success,10,1.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Setup Python without dependency cache,success,19,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Run actions/checkout@v4,success,20,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890412099,6,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Complete job,success,21,0.0,2026-06-03T14:10:53+00:00,workflow_dispatch,disabled,sequential,expanded
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Set up job,success,1,1.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python without dependency cache,success,3,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Setup Python with pip cache,skipped,4,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Install dependencies,success,5,19.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Write run metadata,success,6,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Lint,success,7,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Typecheck,success,8,7.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Tests,success,9,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Upload sequential artifacts,success,10,1.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Setup Python without dependency cache,success,19,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Post Run actions/checkout@v4,success,20,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890387826,5,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,sequential-quality-gates,Complete job,success,21,0.0,2026-06-03T14:10:28+00:00,workflow_dispatch,disabled,sequential,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Set up job,success,1,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Run actions/checkout@v4,success,2,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Setup Python with pip cache,success,4,4.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Install dependencies,success,5,17.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Typecheck,success,6,6.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Setup Python with pip cache,success,11,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,typecheck,Complete job,success,13,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Set up job,success,1,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Setup Python with pip cache,success,4,4.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Install dependencies,success,5,19.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Lint,success,6,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Setup Python with pip cache,success,11,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,lint,Complete job,success,13,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Set up job,success,1,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Run actions/checkout@v4,success,2,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Setup Python with pip cache,success,4,2.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Install dependencies,success,5,18.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Write run metadata,success,6,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Tests,success,7,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Upload test artifacts,success,8,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Post Run actions/checkout@v4,success,16,1.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890072807,4,ddec5fc4c59be9776cd72f3946984d27c9bf5235,success,tests,Complete job,success,17,0.0,2026-06-03T14:05:04+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Set up job,success,1,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Setup Python with pip cache,success,4,3.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Install dependencies,success,5,18.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Typecheck,success,6,7.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,typecheck,Complete job,success,13,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Set up job,success,1,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Setup Python with pip cache,success,4,4.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Install dependencies,success,5,18.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Write run metadata,success,6,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Tests,success,7,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Upload test artifacts,success,8,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Post Run actions/checkout@v4,success,16,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,tests,Complete job,success,17,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Set up job,success,1,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Setup Python with pip cache,success,4,1.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Install dependencies,success,5,18.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Lint,success,6,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Post Setup Python with pip cache,success,11,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26890012236,3,6845ed03c752b91e2bc58ae8d55605f49ae5e240,success,lint,Complete job,success,13,0.0,2026-06-03T14:04:03+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Set up job,success,1,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Run actions/checkout@v4,success,2,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Setup Python with pip cache,success,4,2.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Install dependencies,success,5,18.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Lint,success,6,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Post Setup Python with pip cache,success,11,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,lint,Complete job,success,13,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Set up job,success,1,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Setup Python with pip cache,success,4,2.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Install dependencies,success,5,18.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Write run metadata,success,6,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Tests,success,7,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Upload test artifacts,success,8,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,tests,Complete job,success,17,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Set up job,success,1,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Run actions/checkout@v4,success,2,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Setup Python with pip cache,success,4,2.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Install dependencies,success,5,18.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Typecheck,success,6,6.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Post Setup Python with pip cache,success,11,1.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889357301,2,e54358f07ddaecea811234b195df3c6dcb2ee1d3,success,typecheck,Complete job,success,13,0.0,2026-06-03T13:53:06+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Set up job,success,1,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Run actions/checkout@v4,success,2,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Setup Python with pip cache,success,4,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Install dependencies,success,5,19.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Lint,success,6,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Post Setup Python with pip cache,success,11,3.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,lint,Complete job,success,13,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Set up job,success,1,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Run actions/checkout@v4,success,2,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Setup Python with pip cache,success,4,3.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Install dependencies,success,5,17.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Write run metadata,success,6,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Tests,success,7,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Upload test artifacts,success,8,2.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Post Setup Python with pip cache,success,15,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Post Run actions/checkout@v4,success,16,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,tests,Complete job,success,17,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Set up job,success,1,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Run actions/checkout@v4,success,2,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Setup Python without dependency cache,skipped,3,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Setup Python with pip cache,success,4,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Install dependencies,success,5,20.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Typecheck,success,6,5.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Post Setup Python with pip cache,success,11,1.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Post Run actions/checkout@v4,success,12,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
+26889292713,1,d249062e3c4d9014bee3661661b52c25b35d54df,success,typecheck,Complete job,success,13,0.0,2026-06-03T13:52:00+00:00,push,enabled,parallel,fast
