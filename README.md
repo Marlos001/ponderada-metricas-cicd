@@ -42,6 +42,8 @@ O workflow aceita quatro parametros:
 
 A matriz recomendada esta em `experiments/run_matrix.csv`. Execute pelo menos 12 runs reais; este projeto recomenda 14 para incluir falhas controladas.
 
+Comandos prontos para disparar a matriz estao em `experiments/run_commands.md`.
+
 ## Coleta de metricas
 
 Crie um token com permissao de leitura para Actions e exporte:

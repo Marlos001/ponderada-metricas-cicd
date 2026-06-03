@@ -10,9 +10,6 @@ coverage.xml
 venv/
 artifacts/*.xml
 artifacts/*.zip
-charts/*.png
-data/*.csv
-data/*.json
 !data/.gitkeep
 !charts/.gitkeep
 !artifacts/.gitkeep

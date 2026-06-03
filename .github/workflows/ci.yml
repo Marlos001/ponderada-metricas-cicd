@@ -44,7 +44,7 @@ on:
 
 permissions:
   contents: read
-  actions: read
+  actions: write
 
 env:
   PYTHON_VERSION: "3.11"
