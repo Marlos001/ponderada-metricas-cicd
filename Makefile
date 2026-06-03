@@ -1,6 +1,6 @@
 .PHONY: install lint typecheck test test-fast test-expanded test-slow test-failing collect charts clean
 
-PYTHON ?= python
+PYTHON ?= $(shell if [ -x .venv/bin/python ]; then echo .venv/bin/python; else echo python; fi)
 PYTEST ?= $(PYTHON) -m pytest
 
 install:
@@ -30,6 +30,9 @@ test-failing:
 
 collect:
 	$(PYTHON) scripts/collect_metrics.py --owner Marlos001 --repo ponderada-metricas-cicd --workflow ci.yml
+
+collect-local:
+	$(PYTHON) scripts/collect_metrics.py --owner Marlos001 --repo ponderada-metricas-cicd --workflow ci.yml --artifacts-dir . --local-artifacts-only
 
 charts:
 	$(PYTHON) scripts/generate_charts.py --input data/pipeline_metrics.csv --output-dir charts

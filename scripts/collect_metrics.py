@@ -45,9 +45,23 @@ def main() -> int:
     parser.add_argument("--manifest-output", default="data/run_manifest.csv")
     parser.add_argument("--steps-output", default="data/step_metrics.csv")
     parser.add_argument("--artifacts-dir", default=None)
+    parser.add_argument(
+        "--local-artifacts-only",
+        action="store_true",
+        help="Parse downloaded artifact directories without calling the GitHub API.",
+    )
     args = parser.parse_args()
 
     token = os.getenv("GITHUB_TOKEN")
+    if args.local_artifacts_only:
+        if args.artifacts_dir is None:
+            raise SystemExit("--artifacts-dir is required with --local-artifacts-only.")
+        local_rows = collect_local_artifacts(Path(args.artifacts_dir))
+        write_csv(Path(args.output), local_rows)
+        write_json(Path(args.raw_output), local_rows)
+        print(f"Wrote local artifact metrics to {args.output} and {args.raw_output}")
+        return 0
+
     if not token:
         raise SystemExit("GITHUB_TOKEN is required to collect metrics from GitHub API.")
 
@@ -220,6 +234,51 @@ def load_local_test_metrics(run_id: int, artifacts_dir: str | None) -> TestMetri
     if not candidates:
         return None
     return parse_junit_xml_path(candidates[0])
+
+
+def collect_local_artifacts(artifacts_dir: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for metadata_path in sorted(artifacts_dir.glob("test-results-*/artifacts/run-metadata.json")):
+        base_dir = metadata_path.parents[1]
+        xml_path = base_dir / "artifacts" / "pytest-results.xml"
+        if not xml_path.exists():
+            continue
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        metrics = parse_junit_xml_path(xml_path)
+        rows.append(
+            {
+                "run_id": metadata.get("github_run_id"),
+                "commit_sha": metadata.get("github_sha"),
+                "commit_message": "",
+                "status": infer_status_from_tests(metrics),
+                "workflow_duration": None,
+                "job_name": "tests",
+                "job_status": infer_status_from_tests(metrics),
+                "job_duration": None,
+                "test_count": metrics.test_count,
+                "test_failures": metrics.test_failures,
+                "test_errors": metrics.test_errors,
+                "test_skipped": metrics.test_skipped,
+                "test_time_seconds": metrics.test_time_seconds,
+                "average_test_seconds": metrics.average_test_seconds,
+                "timestamp": metadata.get("generated_at"),
+                "event": "local_artifact",
+                "cache_mode": metadata.get("cache_mode"),
+                "execution_mode": metadata.get("execution_mode"),
+                "test_profile": metadata.get("test_profile"),
+                "pytest_workers": metadata.get("pytest_workers"),
+                "artifact_dir": str(base_dir),
+            }
+        )
+    return rows
+
+
+def infer_status_from_tests(metrics: TestMetrics) -> str:
+    failures = metrics.test_failures or 0
+    errors = metrics.test_errors or 0
+    if failures + errors > 0:
+        return "failure"
+    return "success"
 
 
 def find_test_artifact(
